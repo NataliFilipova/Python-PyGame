@@ -1,7 +1,7 @@
 import pygame, sys
-from settings import *
-from level import Level
-from gamedata import level_0
+from Classes.settings import *
+from Classes.level import Level
+from Classes.gamedata import level_0
 
 def display_score():
 
@@ -22,7 +22,7 @@ start_time = 0
 score = 0
 
 test_font = pygame.font.Font('Font/Pixeltype.ttf', 70)
-player_stand = pygame.image.load('graphics/player/player_stand.png').convert_alpha()
+player_stand = pygame.image.load('graphicss/MainMenuGraphics/player/player_stand.png').convert_alpha()
 player_stand = pygame.transform.rotozoom(player_stand, 0,2)
 player_stand_rect = player_stand.get_rect(center = (600,400))
 
@@ -41,7 +41,7 @@ while True:
             pygame.quit()
             sys.exit()
         if game_active == False:
-            if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
+            if event.type == pygame.KEYDOWN and event.key == pygame.K_F1:
                 game_active = True
                 start_time = int(pygame.time.get_ticks() / 1000) - start_time
     if game_active:
